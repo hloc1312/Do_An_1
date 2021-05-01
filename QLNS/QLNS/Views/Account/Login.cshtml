@@ -1,0 +1,81 @@
+﻿@model QLNS.Models.User
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+@using(Html.BeginForm("Login","Account"))
+{
+<section class="w3l-hotair-form">
+    @*<h1>Report Login Form</h1>*@
+    <div class="container">
+        <!-- /form -->
+        <div class="workinghny-form-grid">
+            <div class="main-hotair">
+                <div class="content-wthree">
+                    <h2>Đăng Nhập</h2>
+                    <!--<form action="#" method="post">-->
+                        @*<input type="text" class="text" name="text" placeholder="Đăng Nhập" required="" autofocus>
+                        <input type="password" class="password" name="password" placeholder="Mật Khẩu" required="" autofocus>
+                        <button class="btn" type="submit">Log In</button>*@
+
+                    <!--</form>-->
+                    @Html.AntiForgeryToken()
+                    <form>
+                        <table>
+                            <tr>
+                                @*<td class="text">@Html.LabelFor(m=>m.UserName)</td>*@
+                                <td class="text">@Html.EditorFor(m => m.UserName, new { htmlAttributes = new { placeholder = "Tài Khoản" } })</td>
+                                
+                            </tr>
+                            <tr>
+                                <td class="color--red">@Html.ValidationMessageFor(m => m.UserName)</td>
+                            </tr>
+                            <tr>
+                                @*<td class="text">@Html.LabelFor(m=>m.UserName)</td>*@
+                                <td class="text">@Html.EditorFor(m => m.PassWord, new { htmlAttributes = new { placeholder = "Mật Khẩu" } })</td>
+                                
+                               
+                            </tr>
+                            <tr>
+                                <td class="color--red">@Html.ValidationMessageFor(m => m.PassWord)</td>
+                              
+                            </tr>
+                            <tr>
+                                <td class="color--red">
+                                    @if (ViewBag.Error == null)
+                                    {
+                                        <p>@ViewBag.Error</p>
+                                        
+                                    }
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" >
+                                <button class="btn " type="submit" >Đăng Nhập</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+
+                    @*<p class="account">Don't have an account? <a href="#signup">Register</a></p>*@
+                </div>
+                <div class="w3l_form align-self">
+                    <div class="left_grid_info">
+                        <img src="~/LoginLayout/images/1.png" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //form -->
+    </div>
+    <!-- copyright-->
+    <div class="copyright text-center">
+        <p class="copy-footer-29">
+        </p>
+    </div>
+    <!-- //copyright-->
+</section>
+<!-- //form section start -->
+
+}
