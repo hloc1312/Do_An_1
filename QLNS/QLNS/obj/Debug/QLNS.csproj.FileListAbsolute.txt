@@ -76,8 +76,8 @@ D:\Do_An_1\QLNS\QLNS\bin\System.Web.WebPages.Razor.xml
 D:\Do_An_1\QLNS\QLNS\bin\Newtonsoft.Json.xml
 D:\Do_An_1\QLNS\QLNS\bin\Antlr3.Runtime.pdb
 D:\Do_An_1\QLNS\QLNS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Do_An_1\QLNS\QLNS\obj\Debug\QLNS.csprojAssemblyReference.cache
 D:\Do_An_1\QLNS\QLNS\obj\Debug\QLNS.csproj.CoreCompileInputs.cache
 D:\Do_An_1\QLNS\QLNS\obj\Debug\QLNS.csproj.CopyComplete
 D:\Do_An_1\QLNS\QLNS\obj\Debug\QLNS.dll
 D:\Do_An_1\QLNS\QLNS\obj\Debug\QLNS.pdb
+D:\Do_An_1\QLNS\QLNS\obj\Debug\QLNS.csprojAssemblyReference.cache

@@ -4,6 +4,13 @@
     box-sizing: border-box;
     font-family: 'Poppins',sans-serif;
 }
+a{
+    text-decoration:none;
+}
+body{
+    padding:0;
+    margin:0;
+}
 /* header */
 .header{
     display:flex;
@@ -12,7 +19,7 @@
     height: 50px;
     background:#ccc;
     /* thêm */
-    position:relative;
+    /*position:relative;*/
 }
 
 .header .header-right a {
@@ -42,9 +49,9 @@
     position:absolute;
     left:0;
     width:250px;
-    height:100%;
+    min-height:100%;
     background-color:#1b1b1b;
-    transition: left 0.4 ease;
+    /*transition: left 0.4 ease;*/
 }
 .sidebar.show{
     left:0;
@@ -69,7 +76,7 @@ nav ul li {
     border-bottom: 1px solid rgba(250, 250, 250, 0.2);
 }
 nav ul li a{
-    text-decoration: none;
+    text-decoration: none !important;
     color:#fff;
     font-size:18px;
     padding:20px;
@@ -79,11 +86,14 @@ nav ul li a{
     border-left: 3px solid transparent;
     position:relative;
 }
-nav ul li.active a{
-    color:cyan;
-    background-color:#1e1e1e;
-    border-left-color: cyan;
+nav ul li a:hover{
+    color:#fff !important;
 }
+nav ul li.active a {
+        color: cyan;
+        background-color: #1e1e1e;
+        border-left-color: cyan;
+    }
 nav ul ul{
     position:static;
     display:none;
@@ -105,7 +115,7 @@ nav ul ul li a {
 }
 nav ul li.active ul li a{
     color:#e6e6e6;
-    background:#1b1b1b;;
+    background:#1b1b1b;
     border-left-color: transparent;
 }
 nav ul ul li a:hover{
@@ -122,4 +132,45 @@ nav ul li a i {
 }
 nav ul li a:hover i{
     transform:translateY(-50%) rotate(-180deg);
+}
+.content {
+    /*width: 100%;*/
+    margin-left: 250px;
+    padding: 20px;
+}
+/*test-name*/
+.test-name{
+    color:red;
+    font-size:20px
+}
+
+/*icon qlnv*/
+.icon-qlnv{
+    margin-right:10px;
+}
+
+/*user them*/
+.user-btn-them {
+    margin-bottom: 10px;
+    transition: all .4s;
+    padding: 11px 7px;
+}
+.user-btn-them:hover{
+   border:1px solid #ccc;
+}
+
+.user-input-search {
+    border: 1px solid #989898;
+    padding: 5px 13px;
+    border-radius: 25px;
+    outline: none;
+    width: 350px;
+    transition:all .3s;
+}
+.user-input-search:hover{
+    border:1px solid blue;
+
+}
+.user-btn-search {
+
 }

@@ -125,6 +125,7 @@
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="QLyNhanSuModel.User">
         <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="UserName" ColumnName="UserName" />
           <ScalarProperty Name="PassWord" ColumnName="PassWord" />
           <ScalarProperty Name="Role" ColumnName="Role" />

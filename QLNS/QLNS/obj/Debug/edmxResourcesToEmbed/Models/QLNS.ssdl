@@ -112,10 +112,11 @@
   </EntityType>
   <EntityType Name="User">
     <Key>
-      <PropertyRef Name="UserName" />
+      <PropertyRef Name="Id" />
     </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="UserName" Type="nchar" MaxLength="50" Nullable="false" />
-    <Property Name="PassWord" Type="nchar" MaxLength="50" />
+    <Property Name="PassWord" Type="nchar" MaxLength="50" Nullable="false" />
     <Property Name="Role" Type="nchar" MaxLength="10" Nullable="false" />
   </EntityType>
   <Association Name="FK_ChamCong_NhanVien">

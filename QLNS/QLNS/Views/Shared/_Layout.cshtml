@@ -1,42 +1,89 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     @Scripts.Render("~/bundles/modernizr")
-</head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/HomeLayout/css/style.css" rel="stylesheet" type="text/css" />
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+</head>
+<body style="padding:0; margin:0">
+    <header class="header">
+        <div class="header-left">
+            <a href="#">Fecth</a>
+        </div>
+        <div class="header-right">
+            <a ><i class="far fa-user-circle"></i>@Html.ActionLink("Đăng Nhập", "Login","Account")</a>
+            <a href="#"><i class="fas fa-sign-out-alt"></i>Thoát</a>
+        </div>
+    </header>
+    <nav class="sidebar nav">
+                    <div class="text">Quản Lý Nhân Sự</div>
+                    <ul>
+                        <li>
+                            <a href="#" class="qlnv-btn"><span class="far fa-id-card icon-qlnv"></span>Quản lý nhân viên<i class='fas fa-caret-down first'></i></a>
+
+                            <ul class="qlnv-show">
+                                <li><a href="@Url.Action("Index","User")">Danh sách tài khoản</a></li>
+                                <li><a href="">Danh sách nhân viên</a></li>
+                                <li><a href="">Danh sách hợp đồng</a></li>
+                                <li><a href="">Danh sách thôi việc</a></li>
+                                <li><a href="">Danh sách hợp đồng</a></li>
+                                <li><a href="">Danh sách dân tộc</a></li>
+                                <li><a href="">Danh sách tôn giáo</a></li>
+                                <li><a href="">Danh sách hợp đồng</a></li>
+                                <li><a href="">Danh sách khen thưởng</a></li>
+                                <li><a href="">Danh sách kỷ luật</a></li>
+                                <li><a href="">Danh sách lương</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="qlpb-btn"><span class="fas fa-toolbox icon-qlnv"></span>Quản lý phòng ban<i class='fas fa-caret-down second'></i></a>
+                            <ul class="qlpb-show">
+                                <li><a href="#">Danh sách phòng ban</a></li>
+                                <li><a href="#">Danh sách chức vụ</a></li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" ><span class="far fa-edit icon-qlnv"></span>Chấm công</a>
+                        </li>
+                        <!-- test -->
+                    </ul>
+                </nav>
+    <div class="content">
+        @RenderSection("scripts", required: false)
+        @RenderBody()
+    </div>
+    @*<div class="height"></div>
+    <div>
+       
+    </div>*@
+
+    <script>
+        $('.qlnv-btn').click(function () {
+            $('nav ul .qlnv-show').toggleClass("show")
+            $('nav ul .first').toggleClass("rotate")
+
+        });
+        $('.qlpb-btn').click(function () {
+            $('nav ul .qlpb-show').toggleClass("show")
+            $('nav ul .second').toggleClass("rotate")
+        });
+        $('nav ul li').click(function () {
+            $(this).addClass("active").siblings().removeClass("active");
+        })
+        $('.btn').click(function () {
+            $(this).toggleClass("click");
+            $('.sidebar').toggleClass("show");
+        })
+
+    </script>
+
 </body>
 </html>
+

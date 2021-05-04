@@ -117,10 +117,11 @@
         </EntityType>
         <EntityType Name="User">
           <Key>
-            <PropertyRef Name="UserName" />
+            <PropertyRef Name="Id" />
           </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserName" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="PassWord" Type="nchar" MaxLength="50" />
+          <Property Name="PassWord" Type="nchar" MaxLength="50" Nullable="false" />
           <Property Name="Role" Type="nchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <Association Name="FK_ChamCong_NhanVien">
@@ -434,10 +435,11 @@
         </EntityType>
         <EntityType Name="User">
           <Key>
-            <PropertyRef Name="UserName" />
+            <PropertyRef Name="Id" />
           </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="PassWord" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="PassWord" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Role" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
         </EntityType>
         <Association Name="FK_ChamCong_NhanVien">
@@ -744,6 +746,7 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="QLyNhanSuModel.User">
               <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="PassWord" ColumnName="PassWord" />
                 <ScalarProperty Name="Role" ColumnName="Role" />

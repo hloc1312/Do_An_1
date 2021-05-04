@@ -1,0 +1,52 @@
+﻿@model IEnumerable<QLNS.Models.User>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center">Danh Sách Tài Khoản</h2>
+
+<a href="@Url.Action("Create","User")" class="btn btn-primary user-btn-them">Thêm mới tài khoản</a>
+@using (Html.BeginForm("Index", "User", FormMethod.Get))
+{
+<div style="margin-bottom:15px;">
+    <input type="text" name="_name" class="user-input-search" placeholder="Nhập tài khoản cần tìm ..."/>
+    <button type="submit" class="btn btn-info"><i class="fa fa-search"></i></button>
+</div>
+
+<table class="table table-bordered table-hover">
+    <tr class="info">
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PassWord)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Role)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PassWord)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Role)
+        </td>
+        <td>
+            <a class="btn btn-warning" href="@Url.Action("Edit",new { id=item.Id})">Edit</a>
+            <a class="btn btn-danger" href="@Url.Action("Details",new { id=item.Id})">Details</a>
+            <a class="btn btn-primary" href="@Url.Action("Delete",new { id=item.Id})">Delete</a>
+        </td>
+    </tr>
+}
+
+</table>
+}
